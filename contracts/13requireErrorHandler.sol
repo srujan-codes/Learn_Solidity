@@ -1,24 +1,47 @@
  // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-// Solidity Error Handling
-//-------- require statement ----------
-// Syntax =====> require(condition, message);
+// Error Handler ===> Require Method
 
-contract requireExample{
-    function checkInput(uint256 _input) public pure returns(string memory){
-        require(_input >= 0, "Invalid uint8");
-        require(_input <= 255, "invalid input");
+/*
+Syntax ===> require(condition);
+*/
 
-        return "Input is uint8 Supported";
+contract Require{
+    function checkInput(uint256 _input) public pure returns(string memory) {
+        require(_input >= 0, "invalid uint8");
+        require(_input <= 255, "invalid uint8");
+
+        return "input is uint8 supported";
     }
 
-    function Odd(uint256 _input) public pure returns(bool){
+     function Odd(uint256 _input) public pure returns(bool){
     require(_input % 2 != 0, "Input must be an odd number");
     return true;  // transaction will only take place if our input is odd number.
+    }
 }
 
-}
+// By using require error handler we succesfully checked if the input number we provide is uint8 supported or not.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
